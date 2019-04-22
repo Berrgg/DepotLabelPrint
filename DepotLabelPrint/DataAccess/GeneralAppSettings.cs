@@ -1,6 +1,6 @@
 ﻿
 
-namespace DepotLabelPrint
+namespace DepotLabelPrint.DataAccess
 {
     static class GeneralAppSettings
     {

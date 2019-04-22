@@ -1,5 +1,4 @@
 ﻿using DevExpress.DataAccess.ConnectionParameters;
-using DepotLabelPrint.DataAccess;
 using DevExpress.DataAccess.Sql;
 
 namespace DepotLabelPrint.DataAccess
