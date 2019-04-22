@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.DataAccess.ConnectionParameters;
+﻿using DevExpress.DataAccess.ConnectionParameters;
+using DepotLabelPrint.DataAccess;
 
 namespace DepotLabelPrint.DataAccess
 {
@@ -13,7 +9,18 @@ namespace DepotLabelPrint.DataAccess
 
         public DatabaseConnectionSI()
         {
+            ApplicationConfig config = new ApplicationConfig("GeneralAppSettings");
 
+            DatabaseConnection = new MsSqlConnectionParameters()
+            {
+                ServerName = config.GetValue(GeneralAppSettings.ServerName),
+                DatabaseName = config.GetValue(GeneralAppSettings.DatabaseName),
+                UserName = config.GetValue(GeneralAppSettings.UserName),
+                Password = config.GetValue(GeneralAppSettings.UserPassword),
+                AuthorizationType = MsSqlAuthorizationType.SqlServer
+            };
         }
+
+
     }
 }
