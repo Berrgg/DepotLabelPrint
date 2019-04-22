@@ -13,5 +13,6 @@ namespace DepotLabelPrint.DataAccess
     {
         MsSqlConnectionParameters DatabaseConnection { get; set; }
 
+        SqlDataSource DataSource { get; set; }
     }
 }

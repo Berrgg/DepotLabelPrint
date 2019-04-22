@@ -1,11 +1,13 @@
 ﻿using DevExpress.DataAccess.ConnectionParameters;
 using DepotLabelPrint.DataAccess;
+using DevExpress.DataAccess.Sql;
 
 namespace DepotLabelPrint.DataAccess
 {
     public class DatabaseConnectionSI : ISqlDatabaseConnection
     {
         public MsSqlConnectionParameters DatabaseConnection { get ; set; }
+        public SqlDataSource DataSource { get ; set ; }
 
         public DatabaseConnectionSI()
         {

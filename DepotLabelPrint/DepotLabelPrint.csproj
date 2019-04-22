@@ -57,6 +57,7 @@
     <Compile Include="DataAccess\ApplicationConfig.cs" />
     <Compile Include="DataAccess\ISqlDatabaseConnection.cs" />
     <Compile Include="DataAccess\DatabaseConnectionSI.cs" />
+    <Compile Include="GeneralAppSettings.cs" />
     <Compile Include="View\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
