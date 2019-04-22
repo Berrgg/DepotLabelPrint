@@ -73,7 +73,7 @@
             this.listBoxControl_Depots.Appearance.Options.UseFont = true;
             this.listBoxControl_Depots.Location = new System.Drawing.Point(12, 154);
             this.listBoxControl_Depots.Name = "listBoxControl_Depots";
-            this.listBoxControl_Depots.Size = new System.Drawing.Size(151, 243);
+            this.listBoxControl_Depots.Size = new System.Drawing.Size(219, 307);
             this.listBoxControl_Depots.TabIndex = 2;
             // 
             // labelControl_Depot
@@ -92,7 +92,7 @@
             this.listBoxControl_SSCC.Appearance.Options.UseFont = true;
             this.listBoxControl_SSCC.Location = new System.Drawing.Point(252, 154);
             this.listBoxControl_SSCC.Name = "listBoxControl_SSCC";
-            this.listBoxControl_SSCC.Size = new System.Drawing.Size(151, 243);
+            this.listBoxControl_SSCC.Size = new System.Drawing.Size(181, 307);
             this.listBoxControl_SSCC.TabIndex = 4;
             // 
             // labelControl_SSCC
