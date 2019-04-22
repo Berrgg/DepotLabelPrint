@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace DepotLabelPrint
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class DepotLabelPrint : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public DepotLabelPrint()
         {
             InitializeComponent();
         }

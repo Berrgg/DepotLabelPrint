@@ -1,6 +1,6 @@
 ﻿namespace DepotLabelPrint
 {
-    partial class Form1
+    partial class DepotLabelPrint
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,17 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // DepotLabelPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 473);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "DepotLabelPrint";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Depot Label Pint";
             this.ResumeLayout(false);
 
         }
