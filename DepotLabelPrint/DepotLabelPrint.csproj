@@ -42,6 +42,7 @@
     <Reference Include="DevExpress.XtraEditors.v18.2" />
     <Reference Include="DevExpress.Printing.v18.2.Core" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\ApplicationConfig.cs" />
     <Compile Include="DataAccess\ISqlDatabaseConnection.cs" />
     <Compile Include="DataAccess\DatabaseConnectionSI.cs" />
     <Compile Include="View\MainView.cs">
