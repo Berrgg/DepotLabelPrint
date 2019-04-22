@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit_DepotDate = new DevExpress.XtraEditors.DateEdit();
             this.labelControl_DepotDate = new DevExpress.XtraEditors.LabelControl();
             this.listBoxControl_Depots = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl_Depot = new DevExpress.XtraEditors.LabelControl();
             this.listBoxControl_SSCC = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl_SSCC = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton_Print = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Depots)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_SSCC)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateEdit1
+            // dateEdit_DepotDate
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(12, 58);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEdit_DepotDate.EditValue = null;
+            this.dateEdit_DepotDate.Location = new System.Drawing.Point(12, 58);
+            this.dateEdit_DepotDate.Name = "dateEdit_DepotDate";
+            this.dateEdit_DepotDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateEdit_DepotDate.Properties.Appearance.Options.UseFont = true;
+            this.dateEdit_DepotDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEdit_DepotDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dateEdit1.Size = new System.Drawing.Size(123, 26);
-            this.dateEdit1.TabIndex = 0;
+            this.dateEdit_DepotDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEdit_DepotDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEdit_DepotDate.Size = new System.Drawing.Size(123, 26);
+            this.dateEdit_DepotDate.TabIndex = 0;
             // 
             // labelControl_DepotDate
             // 
@@ -126,15 +126,15 @@
             this.Controls.Add(this.labelControl_Depot);
             this.Controls.Add(this.listBoxControl_Depots);
             this.Controls.Add(this.labelControl_DepotDate);
-            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.dateEdit_DepotDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.LookAndFeel.SkinName = "Visual Studio 2013 Dark";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "DepotLabelPrint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Depot Label Pint";
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Depots)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_SSCC)).EndInit();
             this.ResumeLayout(false);
@@ -144,7 +144,7 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dateEdit_DepotDate;
         private DevExpress.XtraEditors.LabelControl labelControl_DepotDate;
         private DevExpress.XtraEditors.ListBoxControl listBoxControl_Depots;
         private DevExpress.XtraEditors.LabelControl labelControl_Depot;

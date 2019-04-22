@@ -14,6 +14,14 @@ namespace DepotLabelPrint
         public DepotLabelPrint()
         {
             InitializeComponent();
+
+            SetMainView();
+        }
+
+        private void SetMainView()
+        {
+            dateEdit_DepotDate.EditValue = DateTime.Now;
+            ActiveControl = labelControl_DepotDate;
         }
     }
 }
