@@ -30,30 +30,12 @@ namespace DepotLabelPrint
 
         public void GetDepots()
         {
-            //MsSqlConnectionParameters connectionParameters = new MsSqlConnectionParameters()
-            //{
-            //    ServerName = "10.3.1.7",
-            //    DatabaseName = "si",
-            //    UserName = "siuser",
-            //    Password = "si",
-            //    AuthorizationType = MsSqlAuthorizationType.SqlServer
-            //};
+            var connection = new DatabaseConnectionSI();
+            var depotTable = connection.GetDepotList();
 
-            //SqlDataSource ds = new SqlDataSource(connectionParameters);
-
-            //CustomSqlQuery query = new CustomSqlQuery();
-            //query.Name = "queryDepotList";
-            //query.Sql = "SELECT customername FROM si_sop_customers WHERE master_customer='msho' and active=-1 and customer_type='D' and payment_type=2";
-
-            //ds.Queries.Add(query);
-            //ds.Fill();
-
-            var depotTable = new DatabaseConnectionSI().GetDepotList();
-
-            listBoxControl_Depots.DisplayMember = "customername";
-            listBoxControl_Depots.ValueMember = "customername";
+            listBoxControl_Depots.DisplayMember = connection.DisplayMember;
+            listBoxControl_Depots.ValueMember = connection.ValueMember;
             listBoxControl_Depots.DataSource = depotTable;
-            //listBoxControl_Depots.DataSource = ds.Result["queryDepotList"];
         }
     }
 }

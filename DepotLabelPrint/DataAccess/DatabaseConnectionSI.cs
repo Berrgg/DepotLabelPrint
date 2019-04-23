@@ -9,6 +9,9 @@ namespace DepotLabelPrint.DataAccess
     {
         public MsSqlConnectionParameters DatabaseConnection { get ; private set; }
         public SqlDataSource DataSource { get ; private set ; }
+        public string DisplayMember { get; private set; }
+        public string ValueMember { get; private set; }
+
 
         public DatabaseConnectionSI()
         {
@@ -31,7 +34,10 @@ namespace DepotLabelPrint.DataAccess
 
             ds.Queries.Add(query);
             ds.Fill();
-            ds.SaveToXml();
+
+            DisplayMember = "customername";
+            ValueMember = "customername";
+           // ds.SaveToXml();
 
             return ds.Result["DepotList"];
         }
