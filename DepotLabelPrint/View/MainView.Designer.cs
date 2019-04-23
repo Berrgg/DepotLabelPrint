@@ -32,13 +32,15 @@
             this.labelControl_DepotDate = new DevExpress.XtraEditors.LabelControl();
             this.listBoxControl_Depots = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl_Depot = new DevExpress.XtraEditors.LabelControl();
-            this.listBoxControl_SSCC = new DevExpress.XtraEditors.ListBoxControl();
             this.labelControl_SSCC = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton_Print = new DevExpress.XtraEditors.SimpleButton();
+            this.gridControl_SSCC = new DevExpress.XtraGrid.GridControl();
+            this.gridView_SSCC = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Depots)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_SSCC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_SSCC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_SSCC)).BeginInit();
             this.SuspendLayout();
             // 
             // dateEdit_DepotDate
@@ -87,20 +89,11 @@
             this.labelControl_Depot.TabIndex = 3;
             this.labelControl_Depot.Text = "Depots:";
             // 
-            // listBoxControl_SSCC
-            // 
-            this.listBoxControl_SSCC.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.listBoxControl_SSCC.Appearance.Options.UseFont = true;
-            this.listBoxControl_SSCC.Location = new System.Drawing.Point(252, 154);
-            this.listBoxControl_SSCC.Name = "listBoxControl_SSCC";
-            this.listBoxControl_SSCC.Size = new System.Drawing.Size(181, 307);
-            this.listBoxControl_SSCC.TabIndex = 4;
-            // 
             // labelControl_SSCC
             // 
             this.labelControl_SSCC.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.labelControl_SSCC.Appearance.Options.UseFont = true;
-            this.labelControl_SSCC.Location = new System.Drawing.Point(252, 129);
+            this.labelControl_SSCC.Location = new System.Drawing.Point(238, 129);
             this.labelControl_SSCC.Name = "labelControl_SSCC";
             this.labelControl_SSCC.Size = new System.Drawing.Size(44, 19);
             this.labelControl_SSCC.TabIndex = 5;
@@ -110,20 +103,40 @@
             // 
             this.simpleButton_Print.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.simpleButton_Print.Appearance.Options.UseFont = true;
-            this.simpleButton_Print.Location = new System.Drawing.Point(469, 218);
+            this.simpleButton_Print.Location = new System.Drawing.Point(427, 61);
             this.simpleButton_Print.Name = "simpleButton_Print";
             this.simpleButton_Print.Size = new System.Drawing.Size(140, 61);
             this.simpleButton_Print.TabIndex = 6;
             this.simpleButton_Print.Text = "PRINT";
+            // 
+            // gridControl_SSCC
+            // 
+            this.gridControl_SSCC.Location = new System.Drawing.Point(238, 155);
+            this.gridControl_SSCC.MainView = this.gridView_SSCC;
+            this.gridControl_SSCC.Name = "gridControl_SSCC";
+            this.gridControl_SSCC.Size = new System.Drawing.Size(288, 306);
+            this.gridControl_SSCC.TabIndex = 7;
+            this.gridControl_SSCC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_SSCC});
+            // 
+            // gridView_SSCC
+            // 
+            this.gridView_SSCC.GridControl = this.gridControl_SSCC;
+            this.gridView_SSCC.Name = "gridView_SSCC";
+            this.gridView_SSCC.OptionsBehavior.Editable = false;
+            this.gridView_SSCC.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView_SSCC.OptionsSelection.UseIndicatorForSelection = false;
+            this.gridView_SSCC.OptionsView.ShowGroupPanel = false;
+            this.gridView_SSCC.OptionsView.ShowIndicator = false;
             // 
             // DepotLabelPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 473);
+            this.Controls.Add(this.gridControl_SSCC);
             this.Controls.Add(this.simpleButton_Print);
             this.Controls.Add(this.labelControl_SSCC);
-            this.Controls.Add(this.listBoxControl_SSCC);
             this.Controls.Add(this.labelControl_Depot);
             this.Controls.Add(this.listBoxControl_Depots);
             this.Controls.Add(this.labelControl_DepotDate);
@@ -137,7 +150,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Depots)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_SSCC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_SSCC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_SSCC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,9 +163,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl_DepotDate;
         private DevExpress.XtraEditors.ListBoxControl listBoxControl_Depots;
         private DevExpress.XtraEditors.LabelControl labelControl_Depot;
-        private DevExpress.XtraEditors.ListBoxControl listBoxControl_SSCC;
         private DevExpress.XtraEditors.LabelControl labelControl_SSCC;
         private DevExpress.XtraEditors.SimpleButton simpleButton_Print;
+        private DevExpress.XtraGrid.GridControl gridControl_SSCC;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_SSCC;
     }
 }
 

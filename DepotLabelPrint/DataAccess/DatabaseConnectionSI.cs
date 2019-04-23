@@ -41,5 +41,19 @@ namespace DepotLabelPrint.DataAccess
 
             return ds.Result["DepotList"];
         }
+
+        public ITable GetSsccList()
+        {
+            SqlDataSource ds = new SqlDataSource(DatabaseConnection);
+            var query = new MySqlQuery().QuerySSCCList();
+
+            ds.Queries.Add(query);
+            ds.Fill();
+
+            DisplayMember = "sscc";
+            ValueMember = "sscc";
+
+            return ds.Result["SSCCList"];
+        }
     }
 }

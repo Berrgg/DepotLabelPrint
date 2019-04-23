@@ -19,5 +19,16 @@ namespace DepotLabelPrint.DataAccess
 
             return query;
         }
+
+        public CustomSqlQuery QuerySSCCList()
+        {
+            CustomSqlQuery query = new CustomSqlQuery()
+            {
+                Name = "SSCCList",
+                Sql = "select sscc, orderpallet from DEA2153_Customer_DeliveryDate_sscc where customer = 'MSHEM' and requested_delivery = '04/23/2019'"
+            };
+
+            return query;
+        }
     }
 }

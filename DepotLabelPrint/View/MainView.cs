@@ -23,7 +23,6 @@ namespace DepotLabelPrint
 
         private void SetMainView()
         {
-            listBoxControl_SSCC.MultiColumn = true;
             dateEdit_DepotDate.EditValue = DateTime.Now;
             ActiveControl = labelControl_DepotDate;
             GetDepots();
@@ -41,7 +40,12 @@ namespace DepotLabelPrint
 
         private void listBoxControl_Depots_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(listBoxControl_Depots.SelectedValue.ToString()); 
+            // MessageBox.Show(listBoxControl_Depots.SelectedValue.ToString()); 
+
+            var connection = new DatabaseConnectionSI();
+            var ssccTable = connection.GetSsccList();
+
+            gridControl_SSCC.DataSource = ssccTable;
         }
     }
 }
