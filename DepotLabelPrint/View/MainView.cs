@@ -25,7 +25,11 @@ namespace DepotLabelPrint
         {
             dateEdit_DepotDate.EditValue = DateTime.Now;
             ActiveControl = labelControl_DepotDate;
+
             GetDepots();
+
+            gridView_SSCC.Columns[0].Caption = "SSCC number";
+            gridView_SSCC.Columns[1].Caption = "Pallet";
         }
 
         public void GetDepots()
@@ -40,7 +44,7 @@ namespace DepotLabelPrint
 
         private void listBoxControl_Depots_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // MessageBox.Show(listBoxControl_Depots.SelectedValue.ToString()); 
+             MessageBox.Show(dateEdit_DepotDate.EditValue.ToString()); 
 
             var connection = new DatabaseConnectionSI();
             var ssccTable = connection.GetSsccList();
