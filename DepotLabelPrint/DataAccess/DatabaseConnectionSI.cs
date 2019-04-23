@@ -42,10 +42,10 @@ namespace DepotLabelPrint.DataAccess
             return ds.Result["DepotList"];
         }
 
-        public ITable GetSsccList()
+        public ITable GetSsccList(string customerCode)
         {
             SqlDataSource ds = new SqlDataSource(DatabaseConnection);
-            var query = new MySqlQuery().QuerySSCCList();
+            var query = new MySqlQuery().QuerySSCCList(customerCode);
 
             ds.Queries.Add(query);
             ds.Fill();

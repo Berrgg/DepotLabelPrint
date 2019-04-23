@@ -47,7 +47,7 @@ namespace DepotLabelPrint
              MessageBox.Show(dateEdit_DepotDate.EditValue.ToString()); 
 
             var connection = new DatabaseConnectionSI();
-            var ssccTable = connection.GetSsccList();
+            var ssccTable = connection.GetSsccList(listBoxControl_Depots.SelectedValue.ToString());
 
             gridControl_SSCC.DataSource = ssccTable;
         }

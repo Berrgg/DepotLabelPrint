@@ -20,7 +20,7 @@ namespace DepotLabelPrint.DataAccess
             return query;
         }
 
-        public CustomSqlQuery QuerySSCCList()
+        public CustomSqlQuery QuerySSCCList(string customerCode)
         {
             CustomSqlQuery query = new CustomSqlQuery()
             {
