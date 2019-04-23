@@ -11,8 +11,8 @@ namespace DepotLabelPrint.DataAccess
 {
     public interface ISqlDatabaseConnection
     {
-        MsSqlConnectionParameters DatabaseConnection { get; set; }
+        MsSqlConnectionParameters DatabaseConnection { get; }
 
-        SqlDataSource DataSource { get; set; }
+        SqlDataSource DataSource { get;  }
     }
 }

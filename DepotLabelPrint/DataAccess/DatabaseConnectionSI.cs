@@ -1,12 +1,14 @@
 ﻿using DevExpress.DataAccess.ConnectionParameters;
 using DevExpress.DataAccess.Sql;
+using DepotLabelPrint.DataAccess;
+using DevExpress.DataAccess.Sql.DataApi;
 
 namespace DepotLabelPrint.DataAccess
 {
     public class DatabaseConnectionSI : ISqlDatabaseConnection
     {
-        public MsSqlConnectionParameters DatabaseConnection { get ; set; }
-        public SqlDataSource DataSource { get ; set ; }
+        public MsSqlConnectionParameters DatabaseConnection { get ; private set; }
+        public SqlDataSource DataSource { get ; private set ; }
 
         public DatabaseConnectionSI()
         {
@@ -22,6 +24,16 @@ namespace DepotLabelPrint.DataAccess
             };
         }
 
+        public ITable GetDepotList()
+        {
+            SqlDataSource ds = new SqlDataSource(DatabaseConnection);
+            var query = new MySqlQuery().QueryDepotList();
 
+            ds.Queries.Add(query);
+            ds.Fill();
+            ds.SaveToXml();
+
+            return ds.Result["DepotList"];
+        }
     }
 }
