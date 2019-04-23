@@ -36,7 +36,7 @@ namespace DepotLabelPrint.DataAccess
             ds.Fill();
 
             DisplayMember = "customername";
-            ValueMember = "customername";
+            ValueMember = "customercode";
            // ds.SaveToXml();
 
             return ds.Result["DepotList"];
