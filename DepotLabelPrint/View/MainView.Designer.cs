@@ -75,6 +75,7 @@
             this.listBoxControl_Depots.Name = "listBoxControl_Depots";
             this.listBoxControl_Depots.Size = new System.Drawing.Size(219, 307);
             this.listBoxControl_Depots.TabIndex = 2;
+            this.listBoxControl_Depots.SelectedIndexChanged += new System.EventHandler(this.listBoxControl_Depots_SelectedIndexChanged);
             // 
             // labelControl_Depot
             // 

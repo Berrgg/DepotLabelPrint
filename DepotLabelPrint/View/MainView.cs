@@ -23,6 +23,7 @@ namespace DepotLabelPrint
 
         private void SetMainView()
         {
+            listBoxControl_SSCC.MultiColumn = true;
             dateEdit_DepotDate.EditValue = DateTime.Now;
             ActiveControl = labelControl_DepotDate;
             GetDepots();
@@ -36,6 +37,11 @@ namespace DepotLabelPrint
             listBoxControl_Depots.DisplayMember = connection.DisplayMember;
             listBoxControl_Depots.ValueMember = connection.ValueMember;
             listBoxControl_Depots.DataSource = depotTable;
+        }
+
+        private void listBoxControl_Depots_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(listBoxControl_Depots.SelectedValue.ToString()); 
         }
     }
 }
