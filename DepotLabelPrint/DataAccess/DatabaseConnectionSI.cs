@@ -2,6 +2,7 @@
 using DevExpress.DataAccess.Sql;
 using DepotLabelPrint.DataAccess;
 using DevExpress.DataAccess.Sql.DataApi;
+using System;
 
 namespace DepotLabelPrint.DataAccess
 {
@@ -42,10 +43,10 @@ namespace DepotLabelPrint.DataAccess
             return ds.Result["DepotList"];
         }
 
-        public ITable GetSsccList(string customerCode)
+        public ITable GetSsccList(string customerCode, string depotDate)
         {
             SqlDataSource ds = new SqlDataSource(DatabaseConnection);
-            var query = new MySqlQuery().QuerySSCCList(customerCode);
+            var query = new MySqlQuery().QuerySSCCList(customerCode, depotDate);
 
             ds.Queries.Add(query);
             ds.Fill();

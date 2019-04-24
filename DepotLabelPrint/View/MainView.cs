@@ -32,7 +32,7 @@ namespace DepotLabelPrint
             gridView_SSCC.Columns[1].Caption = "Pallet";
         }
 
-        public void GetDepots()
+        private void GetDepots()
         {
             var connection = new DatabaseConnectionSI();
             var depotTable = connection.GetDepotList();
@@ -42,14 +42,33 @@ namespace DepotLabelPrint
             listBoxControl_Depots.DataSource = depotTable;
         }
 
+        private void GetSSCCList()
+        {
+            var depotDate = Convert.ToDateTime(dateEdit_DepotDate.EditValue);
+            string depotName = null;
+
+            if(listBoxControl_Depots.SelectedValue != null)
+            {
+                depotName = listBoxControl_Depots.SelectedValue.ToString();
+            }
+
+            if (depotName != null && depotDate != null)
+            {
+                var connection = new DatabaseConnectionSI();
+                var ssccTable = connection.GetSsccList(depotName, depotDate.ToString("MM/dd/yyyy"));
+
+                gridControl_SSCC.DataSource = ssccTable;
+            }
+        }
+
         private void listBoxControl_Depots_SelectedIndexChanged(object sender, EventArgs e)
         {
-             MessageBox.Show(dateEdit_DepotDate.EditValue.ToString()); 
+            GetSSCCList();
+        }
 
-            var connection = new DatabaseConnectionSI();
-            var ssccTable = connection.GetSsccList(listBoxControl_Depots.SelectedValue.ToString());
-
-            gridControl_SSCC.DataSource = ssccTable;
+        private void dateEdit_DepotDate_SelectionChanged(object sender, EventArgs e)
+        {
+            GetSSCCList();
         }
     }
 }

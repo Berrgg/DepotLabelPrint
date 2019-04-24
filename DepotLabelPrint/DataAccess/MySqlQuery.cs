@@ -20,13 +20,30 @@ namespace DepotLabelPrint.DataAccess
             return query;
         }
 
-        public CustomSqlQuery QuerySSCCList(string customerCode)
+        public CustomSqlQuery QuerySSCCList(string customerCode, string depotDate)
         {
+            QueryParameter parameter = new QueryParameter
+            {
+                Name = "@CustomerCode",
+                Type = typeof(string),
+                Value = customerCode
+            };
+
+            QueryParameter dateParameter = new QueryParameter
+            {
+                Name = "@DepotDate",
+                Type = typeof(string),
+                Value = depotDate
+            };
+
             CustomSqlQuery query = new CustomSqlQuery()
             {
                 Name = "SSCCList",
-                Sql = "select sscc, orderpallet from DEA2153_Customer_DeliveryDate_sscc where customer = 'MSHEM' and requested_delivery = '04/23/2019'"
+                Sql = "select sscc, orderpallet from DEA2153_Customer_DeliveryDate_sscc where customer = @CustomerCode and requested_delivery = @DepotDate"
             };
+
+            query.Parameters.Add(parameter);
+            query.Parameters.Add(dateParameter);
 
             return query;
         }

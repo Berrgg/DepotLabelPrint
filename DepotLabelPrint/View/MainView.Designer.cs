@@ -58,6 +58,7 @@
             this.dateEdit_DepotDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit_DepotDate.Size = new System.Drawing.Size(123, 26);
             this.dateEdit_DepotDate.TabIndex = 0;
+            this.dateEdit_DepotDate.SelectionChanged += new System.EventHandler(this.dateEdit_DepotDate_SelectionChanged);
             // 
             // labelControl_DepotDate
             // 
