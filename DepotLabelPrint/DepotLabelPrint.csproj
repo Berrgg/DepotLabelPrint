@@ -62,6 +62,7 @@
     <Compile Include="DataAccess\DatabaseConnectionSI.cs" />
     <Compile Include="DataAccess\GeneralAppSettings.cs" />
     <Compile Include="DataAccess\MySqlQuery.cs" />
+    <Compile Include="DataAccess\ReportDataSetTableInfo.cs" />
     <Compile Include="View\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
