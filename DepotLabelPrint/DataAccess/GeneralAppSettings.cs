@@ -11,5 +11,6 @@ namespace DepotLabelPrint.DataAccess
         public const string DatabaseName = "DatabaseName";
         public const string UserName = "UserName";
         public const string UserPassword = "UserPassword";
+        public const string CustomerCode = "CustomerCode";
     }
 }
