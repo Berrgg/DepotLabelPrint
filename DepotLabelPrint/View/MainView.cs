@@ -70,5 +70,14 @@ namespace DepotLabelPrint
         {
             GetSSCCList();
         }
+
+        private void simpleButton_Print_Click(object sender, EventArgs e)
+        {
+            var depotName = listBoxControl_Depots.SelectedValue.ToString();
+            var depotDate = Convert.ToDateTime(dateEdit_DepotDate.EditValue);
+            var sscc = "690210606";
+
+            var dt = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
+        }
     }
 }

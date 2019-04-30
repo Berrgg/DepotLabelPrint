@@ -109,6 +109,7 @@
             this.simpleButton_Print.Size = new System.Drawing.Size(140, 61);
             this.simpleButton_Print.TabIndex = 6;
             this.simpleButton_Print.Text = "PRINT";
+            this.simpleButton_Print.Click += new System.EventHandler(this.simpleButton_Print_Click);
             // 
             // gridControl_SSCC
             // 
