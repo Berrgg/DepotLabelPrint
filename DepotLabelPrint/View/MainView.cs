@@ -77,7 +77,10 @@ namespace DepotLabelPrint
             var depotDate = Convert.ToDateTime(dateEdit_DepotDate.EditValue);
             var sscc = "690210606";
 
-            var dt = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
+            var dt = new ReportDataSetTableInfo("", "", sscc);
+            var ds = dt.GetTableInfo();
+
+            //var dt = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
         }
     }
 }

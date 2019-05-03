@@ -38,21 +38,45 @@ namespace DepotLabelPrint.DataAccess
             var company = config.GetValue(GeneralAppSettings.Company);
             var depot = _depot;
             var depotDate = _depotDate;
-            var barCode = config.GetValue(GeneralAppSettings.CustomerCode)+_ssccCode;
+            var barCode = Mod10DigitCheck(config.GetValue(GeneralAppSettings.CustomerCode) + _ssccCode);
 
-            Mod10DigitCheck(barCode);
+            //Mod10DigitCheck(barCode);
 
-            dt.Rows.Add(siteNumber, site, company, depot, depotDate);
+            dt.Rows.Add(siteNumber, site, company, depot, depotDate, barCode);
 
             return dt;
         }
 
-        private int Mod10DigitCheck(string number)
+        private string Mod10DigitCheck(string number)
         {
+            int totalOdd=0;
+            int totalEven=0;
 
-            int.TryParse(number, out int toCheck);
+            var numbersList = number.Select(x => Convert.ToInt32(x.ToString())).ToList();
+            numbersList.Reverse();
 
-            return toCheck;
+            for (int i = 0; i < numbersList.Count; i++)
+            {
+                if (i % 2 == 0)
+                    totalEven += numbersList[i];
+                else
+                    totalOdd += numbersList[i];
+            }
+
+            totalEven *= 3;
+
+            var total = totalOdd + totalEven;
+            var lastDigit = LastDigit(total);
+
+            if (lastDigit == 0)
+                return number + 0.ToString();
+            else
+                return number + (10 - lastDigit).ToString();
+        }
+
+        private int LastDigit(int n)
+        {
+            return (n % 10);
         }
     }
 }
