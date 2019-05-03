@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.DataAccess.ConnectionParameters;
 using DevExpress.DataAccess.Sql;
 using DepotLabelPrint.DataAccess;
+using DevExpress.DataAccess.Native.Sql;
 
 namespace DepotLabelPrint
 {
@@ -73,14 +74,12 @@ namespace DepotLabelPrint
 
         private void simpleButton_Print_Click(object sender, EventArgs e)
         {
-            var depotName = listBoxControl_Depots.SelectedValue.ToString();
+            var depotName = listBoxControl_Depots.GetItemText(listBoxControl_Depots.SelectedIndex);
             var depotDate = Convert.ToDateTime(dateEdit_DepotDate.EditValue);
-            var sscc = "690210606";
+            var sscc = gridView_SSCC.GetRowCellValue(gridView_SSCC.FocusedRowHandle, gridView_SSCC.Columns[0]).ToString();
 
-            var dt = new ReportDataSetTableInfo("", "", sscc);
+            var dt = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
             var ds = dt.GetTableInfo();
-
-            //var dt = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
         }
     }
 }
