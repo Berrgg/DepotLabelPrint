@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DepotLabelPrint.DataAccess
 {
@@ -39,8 +36,6 @@ namespace DepotLabelPrint.DataAccess
             var depot = _depot;
             var depotDate = _depotDate;
             var barCode = Mod10DigitCheck(config.GetValue(GeneralAppSettings.CustomerCode) + _ssccCode);
-
-            //Mod10DigitCheck(barCode);
 
             dt.Rows.Add(siteNumber, site, company, depot, depotDate, barCode);
 
