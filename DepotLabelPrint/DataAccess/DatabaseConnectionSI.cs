@@ -55,21 +55,50 @@ namespace DepotLabelPrint.DataAccess
             DisplayMember = "sscc";
             ValueMember = "sscc";
 
-            ITable src = ds.Result["SSCCList"];
-            DataTable dest = new DataTable("Test");
+            //ITable src = ds.Result["SSCCList"];
+            //DataTable dest = new DataTable("Test");
 
-            foreach (IColumn column in src.Columns)
+            //foreach (IColumn column in src.Columns)
+            //    dest.Columns.Add(column.Name, column.Type);
+
+            //foreach (IRow rw in src)
+            //{
+            //    DataRow dr = dest.NewRow();
+            //    dr[0] = rw[0];
+            //    dr[1] = rw[1];
+            //    dest.Rows.Add(dr);
+            //}
+
+            return ds.Result["SSCCList"];
+        }
+
+        public DataTable GetSsccProducts(string SSCCcode)
+        {
+            SqlDataSource ds = new SqlDataSource(DatabaseConnection);
+            var query = new MySqlQuery().QuerySSCCProducts(SSCCcode);
+
+            ds.Queries.Add(query);
+            ds.Fill();
+
+            ITable source = ds.Result[0];
+            DataTable dest = new DataTable("Products");
+
+            foreach (IColumn column in source.Columns)
                 dest.Columns.Add(column.Name, column.Type);
 
-            foreach (IRow rw in src)
+            foreach (IRow row in source)
             {
                 DataRow dr = dest.NewRow();
-                dr[0] = rw[0];
-                dr[1] = rw[1];
+
+                for (int i = 0; i < dest.Columns.Count; i++)
+                {
+                    dr[i] = row[i];
+                }
+
                 dest.Rows.Add(dr);
             }
 
-            return ds.Result["SSCCList"];
+            return dest;
         }
     }
 }

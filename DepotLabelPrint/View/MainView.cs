@@ -78,8 +78,11 @@ namespace DepotLabelPrint
             var depotDate = Convert.ToDateTime(dateEdit_DepotDate.EditValue);
             var sscc = gridView_SSCC.GetRowCellValue(gridView_SSCC.FocusedRowHandle, gridView_SSCC.Columns[0]).ToString();
 
-            var dt = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
-            var ds = dt.GetTableInfo();
+            var tableInfo = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
+            DataTable dtInfo = tableInfo.GetTableInfo();
+
+            var tableProducts = new DatabaseConnectionSI();
+            DataTable dtProducts = tableProducts.GetSsccProducts("690219561");
         }
     }
 }
