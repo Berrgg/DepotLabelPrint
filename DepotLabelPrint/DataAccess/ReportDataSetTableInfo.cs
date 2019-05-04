@@ -64,9 +64,9 @@ namespace DepotLabelPrint.DataAccess
             var lastDigit = LastDigit(total);
 
             if (lastDigit == 0)
-                return number + 0.ToString();
+                return "00" + number + 0.ToString();
             else
-                return number + (10 - lastDigit).ToString();
+                return "00" + number + (10 - lastDigit).ToString();
         }
 
         private int LastDigit(int n)
