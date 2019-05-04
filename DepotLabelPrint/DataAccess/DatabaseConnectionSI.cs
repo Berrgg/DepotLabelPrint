@@ -1,8 +1,6 @@
 ﻿using DevExpress.DataAccess.ConnectionParameters;
 using DevExpress.DataAccess.Sql;
-using DepotLabelPrint.DataAccess;
 using DevExpress.DataAccess.Sql.DataApi;
-using System;
 using System.Data;
 
 namespace DepotLabelPrint.DataAccess
@@ -39,7 +37,6 @@ namespace DepotLabelPrint.DataAccess
 
             DisplayMember = "customername";
             ValueMember = "customercode";
-            // ds.SaveToXml();
 
             return ds.Result["DepotList"];
         }
@@ -54,20 +51,6 @@ namespace DepotLabelPrint.DataAccess
 
             DisplayMember = "sscc";
             ValueMember = "sscc";
-
-            //ITable src = ds.Result["SSCCList"];
-            //DataTable dest = new DataTable("Test");
-
-            //foreach (IColumn column in src.Columns)
-            //    dest.Columns.Add(column.Name, column.Type);
-
-            //foreach (IRow rw in src)
-            //{
-            //    DataRow dr = dest.NewRow();
-            //    dr[0] = rw[0];
-            //    dr[1] = rw[1];
-            //    dest.Rows.Add(dr);
-            //}
 
             return ds.Result["SSCCList"];
         }
