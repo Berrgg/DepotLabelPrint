@@ -88,7 +88,7 @@ namespace DepotLabelPrint
             ds.Tables.Add(dtInfo);
             ds.Tables.Add(dtProducts);
 
-         //   ds.WriteXml(@"d:\ScotbeefSolutions\SSCC.xml");
+            //ds.WriteXmlSchema(@"d:\ScotbeefSolutions\SSCC.xsd");
         }
     }
 }
