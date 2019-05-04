@@ -82,7 +82,13 @@ namespace DepotLabelPrint
             DataTable dtInfo = tableInfo.GetTableInfo();
 
             var tableProducts = new DatabaseConnectionSI();
-            DataTable dtProducts = tableProducts.GetSsccProducts("690219561");
+            DataTable dtProducts = tableProducts.GetSsccProducts(sscc);
+
+            DataSet ds = new DataSet();
+            ds.Tables.Add(dtInfo);
+            ds.Tables.Add(dtProducts);
+
+         //   ds.WriteXml(@"d:\ScotbeefSolutions\SSCC.xml");
         }
     }
 }
