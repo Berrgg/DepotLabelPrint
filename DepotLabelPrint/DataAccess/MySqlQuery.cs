@@ -47,5 +47,29 @@ namespace DepotLabelPrint.DataAccess
 
             return query;
         }
+
+        public CustomSqlQuery QuerySSCCProducts(string SSCCcode)
+        {
+            QueryParameter parameter = new QueryParameter
+            {
+                Name = "@ssccCode",
+                Type = typeof(string),
+                Value = SSCCcode
+            };
+
+            CustomSqlQuery query = new CustomSqlQuery()
+            {
+                Name = "SSCCProducts",
+                Sql = @"SELECT right(rtrim(InvB.product),len(rtrim(InvB.product))-2) as SKU, Inv.[description], InvB.ssccserial as SSCC, count(InvB.product) as Qty
+                        FROM inventorybatch InvB
+                        JOIN Inventory Inv on InvB.product = Inv.product
+                        WHERE ssccserial = @ssccCode
+                        GROUP BY InvB.product, Inv.[description], InvB.ssccserial"
+            };
+
+            query.Parameters.Add(parameter);
+
+            return query;
+        }
     }
 }
