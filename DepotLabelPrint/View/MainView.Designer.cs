@@ -104,7 +104,7 @@
             // 
             this.simpleButton_Print.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.simpleButton_Print.Appearance.Options.UseFont = true;
-            this.simpleButton_Print.Location = new System.Drawing.Point(427, 61);
+            this.simpleButton_Print.Location = new System.Drawing.Point(386, 61);
             this.simpleButton_Print.Name = "simpleButton_Print";
             this.simpleButton_Print.Size = new System.Drawing.Size(140, 61);
             this.simpleButton_Print.TabIndex = 6;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 473);
+            this.ClientSize = new System.Drawing.Size(575, 473);
             this.Controls.Add(this.gridControl_SSCC);
             this.Controls.Add(this.simpleButton_Print);
             this.Controls.Add(this.labelControl_SSCC);
