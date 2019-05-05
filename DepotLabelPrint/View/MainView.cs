@@ -9,7 +9,9 @@ using System.Windows.Forms;
 using DevExpress.DataAccess.ConnectionParameters;
 using DevExpress.DataAccess.Sql;
 using DepotLabelPrint.DataAccess;
+using DepotLabelPrint.Reports;
 using DevExpress.DataAccess.Native.Sql;
+using DevExpress.XtraReports.UI;
 
 namespace DepotLabelPrint
 {
@@ -84,11 +86,21 @@ namespace DepotLabelPrint
             var tableProducts = new DatabaseConnectionSI();
             DataTable dtProducts = tableProducts.GetSsccProducts(sscc);
 
+            DataRow dr = dtInfo.Rows[0];
+            dr[6] = dtProducts.Rows.Count;
+
             DataSet ds = new DataSet();
             ds.Tables.Add(dtInfo);
             ds.Tables.Add(dtProducts);
 
             //ds.WriteXmlSchema(@"d:\ScotbeefSolutions\SSCC.xsd");
+
+            XtraReport report = new SSCCReport();
+            report.DataSource = ds;
+
+            ReportPrintTool pt = new ReportPrintTool(report);
+            pt.ShowPreview();
+
         }
     }
 }

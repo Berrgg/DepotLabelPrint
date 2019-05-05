@@ -27,6 +27,7 @@ namespace DepotLabelPrint.DataAccess
             dt.Columns.Add("Depot", typeof(string));
             dt.Columns.Add("DepotDate", typeof(string));
             dt.Columns.Add("BarCode", typeof(string));
+            dt.Columns.Add("ProductsCount", typeof(int));
 
             ApplicationConfig config = new ApplicationConfig("GeneralAppSettings");
 
