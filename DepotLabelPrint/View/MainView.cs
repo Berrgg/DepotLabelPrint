@@ -69,29 +69,36 @@ namespace DepotLabelPrint
         {
             var depotName = listBoxControl_Depots.GetItemText(listBoxControl_Depots.SelectedIndex);
             var depotDate = Convert.ToDateTime(dateEdit_DepotDate.EditValue);
-            var sscc = gridView_SSCC.GetRowCellValue(gridView_SSCC.FocusedRowHandle, gridView_SSCC.Columns[0]).ToString();
+            var sscc = string.Empty;
 
-            var tableInfo = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
-            DataTable dtInfo = tableInfo.GetTableInfo();
+            if(gridView_SSCC.GetRowCellValue(gridView_SSCC.FocusedRowHandle, gridView_SSCC.Columns[0]) != null)
+            {
+                sscc = gridView_SSCC.GetRowCellValue(gridView_SSCC.FocusedRowHandle, gridView_SSCC.Columns[0]).ToString();
+            }
 
-            var tableProducts = new DatabaseConnectionSI();
-            DataTable dtProducts = tableProducts.GetSsccProducts(sscc);
+            if (!string.IsNullOrEmpty(sscc))
+            {
+                var tableInfo = new ReportDataSetTableInfo(depotName, depotDate.ToString("dd/MM/yyyy dddd"), sscc);
+                DataTable dtInfo = tableInfo.GetTableInfo();
 
-            DataRow dr = dtInfo.Rows[0];
-            dr[6] = dtProducts.Rows.Count;
+                var tableProducts = new DatabaseConnectionSI();
+                DataTable dtProducts = tableProducts.GetSsccProducts(sscc);
 
-            DataSet ds = new DataSet();
-            ds.Tables.Add(dtInfo);
-            ds.Tables.Add(dtProducts);
+                DataRow dr = dtInfo.Rows[0];
+                dr[6] = dtProducts.Rows.Count;
 
-            //ds.WriteXmlSchema(@"d:\ScotbeefSolutions\SSCC.xsd");
+                DataSet ds = new DataSet();
+                ds.Tables.Add(dtInfo);
+                ds.Tables.Add(dtProducts);
 
-            XtraReport report = new SSCCReport();
-            report.DataSource = ds;
+                //ds.WriteXmlSchema(@"d:\ScotbeefSolutions\SSCC.xsd");
 
-            ReportPrintTool pt = new ReportPrintTool(report);
-            pt.ShowPreview();
+                XtraReport report = new SSCCReport();
+                report.DataSource = ds;
 
+                ReportPrintTool pt = new ReportPrintTool(report);
+                pt.ShowPreview();
+            }
         }
     }
 }
