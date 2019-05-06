@@ -36,6 +36,7 @@
             this.simpleButton_Print = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl_SSCC = new DevExpress.XtraGrid.GridControl();
             this.gridView_SSCC = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.lblSite = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Depots)).BeginInit();
@@ -131,11 +132,22 @@
             this.gridView_SSCC.OptionsView.ShowGroupPanel = false;
             this.gridView_SSCC.OptionsView.ShowIndicator = false;
             // 
+            // lblSite
+            // 
+            this.lblSite.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSite.Appearance.Options.UseFont = true;
+            this.lblSite.Location = new System.Drawing.Point(229, 12);
+            this.lblSite.Name = "lblSite";
+            this.lblSite.Size = new System.Drawing.Size(110, 19);
+            this.lblSite.TabIndex = 8;
+            this.lblSite.Text = "labelControl1";
+            // 
             // DepotLabelPrint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 473);
+            this.Controls.Add(this.lblSite);
             this.Controls.Add(this.gridControl_SSCC);
             this.Controls.Add(this.simpleButton_Print);
             this.Controls.Add(this.labelControl_SSCC);
@@ -148,7 +160,7 @@
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "DepotLabelPrint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Depot Label Pint";
+            this.Text = "Depot Label Print";
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_DepotDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControl_Depots)).EndInit();
@@ -169,6 +181,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton_Print;
         private DevExpress.XtraGrid.GridControl gridControl_SSCC;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_SSCC;
+        private DevExpress.XtraEditors.LabelControl lblSite;
     }
 }
 

@@ -24,6 +24,17 @@ namespace DepotLabelPrint
 
             gridView_SSCC.Columns[0].Caption = "SSCC number";
             gridView_SSCC.Columns[1].Caption = "Pallet";
+
+            lblSite.Text = GetSite();
+        }
+
+        private string GetSite()
+        {
+            ApplicationConfig config = new ApplicationConfig("GeneralAppSettings");
+
+            var site = config.GetValue(GeneralAppSettings.Site);
+
+            return site;
         }
 
         private void GetDepots()
